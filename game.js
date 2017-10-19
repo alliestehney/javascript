@@ -16,8 +16,8 @@ var grantLosses = 0;
 while (usrpoints !== 0 && grantpoints !==0 ) {
 	usrpoints -= random;
 	grantpoints -= random;
-	console.log(name + " has " + usrpoints + " points left.");
-	console.log("Grant Almighty has " + grantpoints + " points left.");
+	console.log(name + " has " + usrpoints + " health points left.");
+	console.log("Grant Almighty has " + grantpoints + " health points left.");
 	if (grantpoints === 0) {
 		grantLosses ++;
 	}
@@ -28,7 +28,13 @@ while (usrpoints !== 0 && grantpoints !==0 ) {
 }
 
 if (urspoints = 0) {
+	grantWins ++;
 	console.log(name + " has lost the game.")
 } else {
+	usrWins ++;
 	console.log("Grant Almighty has lost the game.")
 }
+
+
+console.log("TOTAL WINS FOR GRANT: " + grantWins);
+console.log("TOTAL WINS FOR " + name +": " + usrWins);
