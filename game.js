@@ -1,3 +1,13 @@
+function playGame() {
+	var question = prompt("Would you like to attack or quit?");
+
+	if (question === "attack") {
+		startGame();
+	}
+}
+
+playGame();
+
 function startGame() {
 	var play = prompt("Would you like to play a game with two characters? (yes or no)");
 
@@ -7,7 +17,6 @@ function startGame() {
 		startCombat();
 	}
 }
-startGame();
 
 function getDamage() {
 	return Math.floor(Math.random() *5) + 1;
@@ -31,7 +40,7 @@ function startCombat() {
 		}
 		if (0 >= grantpoints && grantLosses < 3) {
 			grantpoints = 10;
-			console.log("WORKED!!!!")
+			// console.log("WORKED!!!!")
 		}
 	}
 
@@ -46,6 +55,7 @@ function startCombat() {
 
 	console.log("TOTAL WINS FOR GRANT: " + grantWins);
 	console.log("TOTAL WINS FOR " + name +": " + usrWins);
+	playGame();
 }
 
 
