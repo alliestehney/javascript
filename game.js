@@ -23,7 +23,7 @@ while (usrpoints !== 0 && grantpoints !==0 ) {
 	}
 	if (grantpoints === 0 && grantLosses < 3) {
 		grantpoints = 10;
-		console.log("WORKED!!!!")
+		// console.log("WORKED!!!!")
 	}
 }
 
