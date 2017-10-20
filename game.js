@@ -7,6 +7,7 @@ function startGame() {
 		var name = prompt("Please enter your name.");
 		console.log(name);
 		startCombat();
+		//return name;
 	}
 }
 
