@@ -1,12 +1,4 @@
-function playGame() {
-	var question = prompt("Would you like to attack or quit?");
-
-	if (question === "attack") {
-		startGame();
-	}
-}
-
-playGame();
+startGame();
 
 function startGame() {
 	var play = prompt("Would you like to play a game with two characters? (yes or no)");
@@ -31,16 +23,21 @@ function startCombat() {
 	var grantLosses = 0;
 
 	while (usrpoints > 0 && grantpoints > 0 ) {
-		usrpoints -= getDamage();
-		grantpoints -= getDamage();
-		console.log(name + " has " + usrpoints + " health points left.");
-		console.log("Grant Almighty has " + grantpoints + " health points left.");
-		if (grantpoints <= 0) {
-			grantLosses ++;
-		}
-		if (0 >= grantpoints && grantLosses < 3) {
-			grantpoints = 10;
-			// console.log("WORKED!!!!")
+		if (prompt("Would you like to attack or quit?") === "attack") {
+			usrpoints -= getDamage();
+			grantpoints -= getDamage();
+			console.log(name + " has " + usrpoints + " health points left.");
+			console.log("Grant Almighty has " + grantpoints + " health points left.");
+			if (grantpoints <= 0) {
+				grantLosses ++;
+			}
+			if (0 >= grantpoints && grantLosses < 3) {
+				grantpoints = 10;
+				// console.log("WORKED!!!!")
+			}
+		} else {
+			console.log("GAME OVER.");
+			break;
 		}
 	}
 
@@ -55,8 +52,8 @@ function startCombat() {
 
 	console.log("TOTAL WINS FOR GRANT: " + grantWins);
 	console.log("TOTAL WINS FOR " + name +": " + usrWins);
-	playGame();
 }
+
 
 
 
