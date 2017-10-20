@@ -7,15 +7,18 @@ if (play === "yes") {
 
 var usrpoints = 40;
 var grantpoints = 10;
-var random = (Math.floor(Math.random() *2) + 1);
+// var random = (Math.floor(Math.random() *2) + 1);
 var grantWins = 0;
 var usrWins = 0;
 var grantLosses = 0;
 
+function getDamage() {
+	return Math.floor(Math.random() *2) + 1;
+}
 
-while (usrpoints !== 0 && grantpoints !==0 ) {
-	usrpoints -= random;
-	grantpoints -= random;
+while (usrpoints !== 0 && grantpoints !== 0 ) {
+	usrpoints -= getDamage();
+	grantpoints -= getDamage();
 	console.log(name + " has " + usrpoints + " health points left.");
 	console.log("Grant Almighty has " + grantpoints + " health points left.");
 	if (grantpoints === 0) {
