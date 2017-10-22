@@ -6,7 +6,7 @@ function startGame() {
 	if (play === "yes") {
 		var name = prompt("Please enter your name.");
 		console.log(name);
-		startCombat();
+		startCombat(name);
 		//return name;
 	}
 }
@@ -15,7 +15,7 @@ function getDamage() {
 	return Math.floor(Math.random() *5) + 1;
 }
 
-function startCombat() {
+function startCombat(name) {
 
 	var usrpoints = 40;
 	var grantpoints = 10;
