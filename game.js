@@ -5,7 +5,6 @@ function startGame() {
 
 	if (play === "yes") {
 		var name = prompt("Please enter your name.");
-		console.log(name);
 		startCombat(name);
 		//return name;
 	}
@@ -34,20 +33,24 @@ function startCombat(name) {
 			}
 			if (0 >= grantpoints && grantLosses < 3) {
 				grantpoints = 10;
-				// console.log("WORKED!!!!")
 			}
 		} else {
 			console.log("GAME OVER.");
+			if (grantpoints < usrpoints) {
+				grantpoints = 0;
+			} else {
+				usrpoints = 0;
+			}
 			break;
 		}
 	}
 
-	if (0 <= usrpoints) {
-		grantWins ++;
-		console.log(name + " has lost the game.")
-	} else {
+	if (grantpoints <= 0) {
 		usrWins ++;
-		console.log("Grant Almighty has lost the game.")
+		console.log(name + " has won the game.");
+	} else {
+		grantWins ++;
+		console.log("Grant Almighty has won the game.");
 	}
 
 
