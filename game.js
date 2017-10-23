@@ -55,7 +55,7 @@ function startCombat(name) {
 
 
 	console.log("TOTAL WINS FOR GRANT: " + grantWins);
-	console.log("TOTAL WINS FOR " + name +": " + usrWins);
+	console.log("TOTAL WINS FOR " + name.toUpperCase() +": " + usrWins);
 }
 
 
