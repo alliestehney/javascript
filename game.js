@@ -39,8 +39,8 @@ function startCombat(name) {
 	while (user.health > 0 && grant.health > 0 ) {
 		var gamePrompt = prompt("Would you like to attack, heal, or quit?");
 		if (gamePrompt === "attack") {
-			user.health -= user.generateAttackDamage();
-			grant.health -= grant.generateAttackDamage();
+			user.health -= grant.generateAttackDamage();
+			grant.health -= user.generateAttackDamage();
 			console.log(name + " has " + user.health + " health points left.");
 			console.log("Grant Almighty has " + grant.health + " health points left.");
 			if (grant.health <= 0) {
