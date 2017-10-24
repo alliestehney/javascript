@@ -10,52 +10,66 @@ function startGame() {
 	}
 }
 
-function getDamage() {
-	return Math.floor(Math.random() *5) + 1;
-}
-
 function startCombat(name) {
 
-	var usrpoints = 40;
-	var grantpoints = 10;
-	var grantWins = 0;
-	var usrWins = 0;
-	var grantLosses = 0;
+	var user = { 
+		username: name, 
+		health: 40, 
+		wins: 0, 
+		healCount: 0, 
+		heal: function() {
+			health += (Math.floor(Math.random()*10) + 1);
+			healCount++;
+		}	, 
+		generateAttackDamage: function() {
+			return Math.floor(Math.random() *3) +1;
+		}
+	}
 
-	while (usrpoints > 0 && grantpoints > 0 ) {
+	var grant = {
+		name: grant,
+		health: 10,
+		wins: 0, 
+		losses: 0,
+		generateAttackDamage: function() {
+			return Math.floor(Math.random() *5)+1;
+		}
+	}
+
+	while (user.health > 0 && grant.health > 0 ) {
 		if (prompt("Would you like to attack or quit?") === "attack") {
-			usrpoints -= getDamage();
-			grantpoints -= getDamage();
-			console.log(name + " has " + usrpoints + " health points left.");
-			console.log("Grant Almighty has " + grantpoints + " health points left.");
-			if (grantpoints <= 0) {
-				grantLosses ++;
+			user.health -= user.generateAttackDamage();
+			grant.health -= grant.generateAttackDamage();
+			console.log(name + " has " + user.health + " health points left.");
+			console.log("Grant Almighty has " + grant.health + " health points left.");
+			if (grant.health <= 0) {
+				grant.losses++;
 			}
-			if (0 >= grantpoints && grantLosses < 3) {
-				grantpoints = 10;
+			if (0 >= grant.health && grant.losses < 3) {
+				grant.health = 10;
 			}
 		} else {
 			console.log("GAME OVER.");
-			if (grantpoints < usrpoints) {
-				grantpoints = 0;
+			if (grant.health < user.health) {
+				grant.health = 0;
 			} else {
-				usrpoints = 0;
+				user.health = 0;
 			}
 			break;
 		}
 	}
 
-	if (grantpoints <= 0) {
-		usrWins ++;
+	if (grant.health <= 0) {
+		user.wins ++;
 		console.log(name + " has won the game.");
 	} else {
-		grantWins ++;
+		grant.wins ++;
 		console.log("Grant Almighty has won the game.");
 	}
 
 
-	console.log("TOTAL WINS FOR GRANT: " + grantWins);
-	console.log("TOTAL WINS FOR " + name.toUpperCase() +": " + usrWins);
+	console.log("TOTAL WINS FOR GRANT: " + grant.wins);
+	console.log("TOTAL WINS FOR " + name.toUpperCase() +": " + user.wins);
 }
 
 
