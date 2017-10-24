@@ -50,10 +50,15 @@ function startCombat(name) {
 				grant.health = 10;
 			}
 		} else if (gamePrompt === "heal") {
-			user.heal();
-			console.log(name + " has " + user.health + " health points left.");
-			grant.health -= user.generateAttackDamage();
-			console.log("Grant Almight has " + grant.health + " health points left.");
+			if (user.healCount < 2) {
+				user.heal();
+				console.log(name + " has " + user.health + " health points left.");
+				grant.health -= user.generateAttackDamage();
+				console.log("Grant Almight has " + grant.health + " health points left.");
+			} else {
+				console.log("***SORRY, YOU'VE USED ALL OF YOUR HEALS.***");
+				gamePrompt;
+			}
 		} else {
 			console.log("GAME OVER.");
 			if (grant.health < user.health) {
