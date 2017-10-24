@@ -18,8 +18,8 @@ function startCombat(name) {
 		wins: 0, 
 		healCount: 0, 
 		heal: function() {
-			health += (Math.floor(Math.random()*10) + 1);
-			healCount++;
+			this.health += (Math.floor(Math.random()*10) + 1);
+			this.healCount++;
 		}	, 
 		generateAttackDamage: function() {
 			return Math.floor(Math.random() *3) +1;
@@ -37,7 +37,8 @@ function startCombat(name) {
 	}
 
 	while (user.health > 0 && grant.health > 0 ) {
-		if (prompt("Would you like to attack or quit?") === "attack") {
+		var gamePrompt = prompt("Would you like to attack, heal, or quit?");
+		if (gamePrompt === "attack") {
 			user.health -= user.generateAttackDamage();
 			grant.health -= grant.generateAttackDamage();
 			console.log(name + " has " + user.health + " health points left.");
@@ -48,6 +49,11 @@ function startCombat(name) {
 			if (0 >= grant.health && grant.losses < 3) {
 				grant.health = 10;
 			}
+		} else if (gamePrompt === "heal") {
+			user.heal();
+			console.log(name + " has " + user.health + " health points left.");
+			grant.health -= user.generateAttackDamage();
+			console.log("Grant Almight has " + grant.health + " health points left.");
 		} else {
 			console.log("GAME OVER.");
 			if (grant.health < user.health) {
