@@ -57,7 +57,7 @@ function startCombat(name) {
 				console.log("Grant Almight has " + grant.health + " health points left.");
 			} else {
 				console.log("***SORRY, YOU'VE USED ALL OF YOUR HEALS.***");
-				gamePrompt;
+				prompt("Would you like to attack or quit?");
 			}
 		} else {
 			console.log("GAME OVER.");
