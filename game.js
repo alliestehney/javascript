@@ -44,10 +44,12 @@ function startCombat(name) {
 			console.log(name + " has " + user.health + " health points left.");
 			console.log("Grant Almighty has " + grant.health + " health points left.");
 			if (grant.health <= 0) {
-				grant.losses++;
+				user.wins++;
 			}
-			if (0 >= grant.health && grant.losses < 3) {
+			if (0 >= grant.health && user.wins <= 5) {
 				grant.health = 10;
+				console.log("***RESET GRANT POINTS TO 10; USER GETS ONE POINT FOR WINS");
+				console.log(name + " has " + user.wins + " wins so far!!!");
 			}
 		} else if (gamePrompt === "heal") {
 			if (user.healCount < 2) {
@@ -70,14 +72,19 @@ function startCombat(name) {
 		}
 	}
 
-	if (grant.health <= 0) {
-		user.wins ++;
+	// if (grant.health <= 0) {
+	// 	user.wins ++;
+	// 	console.log(name + " has won the game.");
+	// } else {
+	// 	grant.wins ++;
+	// 	console.log("Grant Almighty has won the game.");
+	// }
+
+	if (user.wins === 5) {
 		console.log(name + " has won the game.");
 	} else {
-		grant.wins ++;
 		console.log("Grant Almighty has won the game.");
 	}
-
 
 	console.log("TOTAL WINS FOR GRANT: " + grant.wins);
 	console.log("TOTAL WINS FOR " + name.toUpperCase() +": " + user.wins);
