@@ -86,6 +86,8 @@ function startCombat(name) {
 var playAgain = prompt("Would you like to play again? (yes or no)");
 if (playAgain === "yes") {
 	startGame();
+} else {
+	console.log("Thanks for playing!");
 }
 
 
