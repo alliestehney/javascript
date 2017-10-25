@@ -1,9 +1,10 @@
 body {
 	background-color: #98AFC7;
+	font-family: 'Roboto', sans-serif;
 }
 
 #start {
-	margin: 11% 46% 7% 46%;
+	margin: 5% 46% 7% 46%;
 }
 
 button {
@@ -22,4 +23,39 @@ button:hover {
 
 .options {
 	text-align: center;
+	margin-bottom: -45px;
+}
+
+h4 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	text-align: center;
+}
+
+#statsContainer {
+	display: flex;
+}
+
+#playerStats {
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	justify-content: space-around;
+	margin-bottom: 30px;
+}
+
+#enemyStats {
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	justify-content: space-around;
+}
+
+#container {
+	border: 2px solid black;
+	margin: 8%;
+}
+
+.flex-item {
+	font-weight: 300;
 }
