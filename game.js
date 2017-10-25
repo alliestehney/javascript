@@ -83,6 +83,12 @@ function startCombat(name) {
 	console.log("TOTAL WINS FOR " + name.toUpperCase() +": " + user.wins);
 }
 
+var playAgain = prompt("Would you like to play again? (yes or no)");
+if (playAgain === "yes") {
+	startGame();
+}
+
+
 
 
 
