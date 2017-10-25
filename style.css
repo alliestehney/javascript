@@ -1,0 +1,25 @@
+body {
+	background-color: #98AFC7;
+}
+
+#start {
+	margin: 11% 46% 7% 46%;
+}
+
+button {
+	padding: 15px;
+	text-align: center;
+	font-size: 14px;
+	width: 90px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+button:hover {
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.options {
+	text-align: center;
+}
