@@ -1,13 +1,19 @@
-startGame();
+var startBtn = document.getElementById("start");
+var content = document.getElementById("everything");
+
+startBtn.onclick = function() {
+	content.style.display = "block";
+}
 
 function startGame() {
-	var play = prompt("Would you like to play a game with two characters? (yes or no)");
 
-	if (play === "yes") {
-		var name = prompt("Please enter your name.");
-		startCombat(name);
-		//return name;
-	}
+	//var play = prompt("Would you like to play a game with two characters? (yes or no)");
+
+	// if (play === "yes") {
+	// 	var name = prompt("Please enter your name.");
+	// 	startCombat(name);
+	// 	//return name;
+	// }
 }
 
 function startCombat(name) {
@@ -91,12 +97,12 @@ function startCombat(name) {
 	console.log("TOTAL WINS FOR " + name.toUpperCase() +": " + user.wins);
 }
 
-var playAgain = prompt("Would you like to play again? (yes or no)");
-if (playAgain === "yes") {
-	startGame();
-} else {
-	console.log("Thanks for playing!");
-}
+// var playAgain = prompt("Would you like to play again? (yes or no)");
+// if (playAgain === "yes") {
+// 	startGame();
+// } else {
+// 	console.log("Thanks for playing!");
+// }
 
 
 
