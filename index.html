@@ -10,6 +10,17 @@
 	<body>
 
 		<button type="button" id="start">START</button>
+		<div id="nameInput"></div>
+		
+		<!-- creating empty div to put score updates in -->
+		<div id="healthLeft">
+			<p id="userName"></p> <!--DYNAMIC CONTENT -->
+			<p id="resetStr"></p>
+			<p id="winsUpdate"></p>
+			<p id="healStr"></p>
+		</div>
+
+		<div id="gameOver"></div>
 
 		<div id="everything">
 			<div class="options">
@@ -27,15 +38,15 @@
 					</div>
 					<div class="flex-item">
 						<p>Health</p>
-						<progress value="30" max="100"></progress>
+						<progress id="userHealthProgress" value="40" max="40"></progress>
 					</div>
 					<div class="flex-item">
 						<p>Health Count</p>
-						<progress value="40" max="100"></progress>
+						<progress id="userHealthCount" value="2" max="2"></progress>
 					</div>
 					<div class="flex-item">
 						<p>Wins</p>
-						<progress value="30" max="100"></progress>
+						<progress id="userWinsBar" value="0" max="5"></progress>
 					</div>
 				</div>
 
@@ -47,7 +58,7 @@
 					</div>
 					<div class="flex-item">
 						<p>Health</p>
-						<progress value="30" max="100"></progress>
+						<progress id="enemyHealthProgress" value="10" max="10"></progress>
 					</div>
 				</div>
 			</div>

@@ -4,7 +4,15 @@ body {
 }
 
 #start {
-	margin: 5% 46% 7% 46%;
+	margin: 5% 46% 4% 46%;
+}
+
+#nameID {
+	display: flex;
+}
+
+#healthLeft p {
+	text-align: center;
 }
 
 button {
