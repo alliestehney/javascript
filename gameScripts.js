@@ -74,6 +74,10 @@ function healControl(usrH, compH) {
 	usrH.heal();
 	updateProgressBar(usrH, compH);
 	checkingWinOrLose(usrH, compH);
+	if (usrH.healCount === 0) {
+		var healBtn = document.getElementById("heal");
+		healBtn.setAttribute("disabled", "true");
+	}
 }
 
 // function that updates the progress bars 
