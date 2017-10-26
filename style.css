@@ -71,3 +71,9 @@ h4 {
 #everything {
 	display: none;
 }
+
+#gameStatusLine {
+	text-align: center;
+	margin-top: 7%;
+	margin-bottom: -4%;
+}

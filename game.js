@@ -8,54 +8,59 @@ startBtn.onclick = function() {
 }
 
 function startGame() {
+	var user = { 
+		username: name, 
+		health: 40, 
+		wins: 0, 
+		healCount: 0, 
+		heal: function() {
+			this.health += (Math.floor(Math.random()*10) + 1);
+			this.healCount++;
+		}, 
+		generateAttackDamage: function() {
+			return Math.floor(Math.random() *3) +1;
+		}
+	}
 
-	//var play = prompt("Would you like to play a game with two characters? (yes or no)");
-
-	// if (play === "yes") {
-	var name = prompt("Please enter your name.");
-
-	//return name;
-	// var inputBox = document.getElementById("nameInput");
-	// var name1 = document.createElement("input");
-	// name1.style.padding = "8px";
-	// name1.style.width = "222px";
-	// name1.setAttribute("value", "");
-	// inputBox.appendChild(name1);
-	//startCombat(name);
-	//return name;
-	//var name = name1.value;
-	//console.log(name);
-	// }
-}
-
-console.log(name);
-
-var user = { 
-	username: name, 
-	health: 40, 
-	wins: 0, 
-	healCount: 0, 
-	heal: function() {
-		this.health += (Math.floor(Math.random()*10) + 1);
-		this.healCount++;
-	}	, 
-	generateAttackDamage: function() {
-		return Math.floor(Math.random() *3) +1;
+	var grant = {
+		name: grant,
+		health: 10,
+		wins: 0, 
+		losses: 0,
+		generateAttackDamage: function() {
+			return Math.floor(Math.random() *5)+1;
+		}
 	}
 }
 
-var userName = user.username;
-console.log(userName);
 
-var grant = {
-	name: grant,
-	health: 10,
-	wins: 0, 
-	losses: 0,
-	generateAttackDamage: function() {
-	return Math.floor(Math.random() *5)+1;
-	}
-}
+
+// var user = { 
+// 	username: name, 
+// 	health: 40, 
+// 	wins: 0, 
+// 	healCount: 0, 
+// 	heal: function() {
+// 		this.health += (Math.floor(Math.random()*10) + 1);
+// 		this.healCount++;
+// 	}	, 
+// 	generateAttackDamage: function() {
+// 		return Math.floor(Math.random() *3) +1;
+// 	}
+// }
+
+// var userName = user.username;
+// console.log(userName);
+
+// var grant = {
+// 	name: grant,
+// 	health: 10,
+// 	wins: 0, 
+// 	losses: 0,
+// 	generateAttackDamage: function() {
+// 	return Math.floor(Math.random() *5)+1;
+// 	}
+// }
 
 // var space = document.getElementById("healthLeft");
 // var update = document.createElement('p');
