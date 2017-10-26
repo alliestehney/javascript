@@ -3,6 +3,7 @@ var content = document.getElementById("everything");
 
 startBtn.onclick = function() {
 	content.style.display = "block";
+	startBtn.style.display = "none";
 	startGame();
 }
 
@@ -98,7 +99,7 @@ function startCombat(actionStr) {
 	}
 
 
-	if (actionStr === "attack") {
+	if (actionStr === "attack" && user.health >=0) {
 		user.health -= grant.generateAttackDamage();
 		grant.health -= user.generateAttackDamage();
 		//console.log(name + " has " + user.health + " health points left.");
@@ -134,6 +135,17 @@ function startCombat(actionStr) {
 			winsUpdate.appendChild(newWins);
 
 			console.log(name + " has " + user.wins + " wins so far!!!");
+		}
+
+		if (user.health <= 0 && user.wins < 5) {
+			if (actionStr === "attack") {
+				user.health = user.health;
+				grant.health = grant.health;
+				var winnerContent = document.getElementById("winner");
+				var newWinner = document.createElement('p');
+				newWinner.innerHTML = "GRANT WINS."
+				winnerContent.appendChild(newWinner);
+			}
 		}
 	} else if (actionStr === "heal") {
 		if (user.healCount < 2) {
